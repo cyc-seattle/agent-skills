@@ -1,6 +1,6 @@
 {
   "name": "cyc",
-  "description": "Skills for writing, issues, plans, and work sessions in cyc-seattle repos",
+  "description": "Skills and sub-agents for writing, issues, plans, and work sessions in cyc-seattle repos",
   "author": {
     "name": "cyc-seattle",
     "url": "https://github.com/cyc-seattle"

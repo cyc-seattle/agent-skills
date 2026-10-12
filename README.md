@@ -12,6 +12,11 @@ Agent skills shared by the cyc-seattle repos. Each skill is a directory under `s
 | `implement`         | Hand one scoped change to the `implementer` agent       |
 | `review`            | Review the session diff with the `reviewer` agent       |
 | `end-session`       | Run `mise run ci`, open the PR, and hand off            |
+| `write-feature`     | Write integration scenarios in Gherkin                  |
+
+## Sub-agents
+
+The `agents/` directory holds the `designer`, `implementer`, and `reviewer` sub-agents that the session skills dispatch. They use Claude Code's format, which Cursor and VS Code also read. The Claude Code plugin installs them.
 
 ## Install
 
