@@ -1,0 +1,123 @@
+---
+name: end-session
+description: Close a work session — run mise run ci, open one pull request for the whole batch, review the diff, and end with the list of what the user must do. Use when the user says the session is done, they are happy with the batch, or "ship it".
+---
+
+# End a Session
+
+Turn the session branch into one pull request. The human merges it, and that merge is the approval.
+
+## 1. Check the tree
+
+Run `git status --short`. The tree must be clean.
+
+If work is uncommitted, ask the user whether to commit it or drop it. Do not open a PR over a dirty tree.
+
+## 2. Run the full gate
+
+```sh
+mise run ci
+```
+
+This is the same gate the pull request's CI runs.
+
+If it fails, fix it through `implement` so the fix gets its own commit. Do not open a PR on a red gate unless the user tells you to.
+
+## 3. Open the pull request
+
+Open it as soon as the gate is green, before the review runs. The human then reads the diff in parallel with the review instead of waiting on it.
+
+```sh
+git push -u origin HEAD
+gh pr create --base main --title "<summary of the batch>" --fill
+```
+
+Write the body from the session task list. One bullet per task, in the order they were done.
+
+```markdown
+## Changes
+
+- <task 1>
+- <task 2>
+
+## Verification
+
+`mise run ci` passes. Review in progress.
+```
+
+Say what the gate proved, and name what it could not. A change that needs a deploy, a schema apply, or a live credential stays unverified until a human does it. Call that out here. A green `mise run ci` must not imply more than it does.
+
+Link issues by what the PR finishes:
+
+- **A plan step:** `Part of #N`. Use `Closes #N` only for the last step.
+- **A task with its own issue:** `Closes #N`.
+- **No issue:** no link. Most sessions have none.
+
+Request a review only when someone other than the author can give one. GitHub rejects a request for review from yourself.
+
+```sh
+gh pr edit <N> --add-reviewer <login>
+```
+
+## 4. Review the diff
+
+Run the `review` skill against the branch. Report the findings to the user. Post anything substantive to the PR, so the review and the human's own reading meet in one place.
+
+The user decides what to fix now and what to capture as an issue. Fix through `implement`. After any fix, run `mise run ci` again and push to the same branch.
+
+## 5. Hand off
+
+**Never run `gh pr merge`.** Keep CI green and answer review comments. The human presses merge.
+
+If CI fails after the push, or a review asks for a change, fix it on the same branch through `implement` and push again.
+
+For a plan step, tick nothing on the plan issue yet. The step is done when its PR merges.
+
+### Always end the session with this block
+
+The last thing in your final message is the handoff block below. Nothing comes after it — no sign-off, no summary of what you did. The user should never scroll back to find what you need from them.
+
+```markdown
+## Over to you
+
+<PR URL>
+
+1. Merge the PR — that is the approval.
+2. <each manual step, one line, imperative>
+3. <each open question you could not decide>
+```
+
+Number the list so the user can answer by item ("2: done, 4: skip"). Never use checkboxes.
+
+Rules for the list:
+
+- **Only things the user must do.** Not what you did, not what a follow-up session will do.
+- **One line each, imperative**, starting with the verb. "Assign the Groups Administrator role in the Admin console (`docs/manual-setup.md` §5.4)."
+- **Anything a green `mise run ci` did not prove** goes here: a deploy, a schema apply, a live credential, a manual console step, an API whose behavior is unconfirmed.
+- **Every question you asked and never got an answer to** goes here, with the decision you made in the meantime. Silence must not read as agreement. This list is not where a question gets asked for the first time. If it blocks something, you should have asked when you found it. A question that only appeared in ordinary output was never asked, and writing it here does not make it so.
+- Say where each step is documented, so the user is not hunting.
+- If the list is empty except the merge, say so in one line rather than padding it.
+
+Emit this block even when the session ends early, is interrupted, or ends without a PR. If there is no PR, say what state the branch is in and what it needs.
+
+## 6. Clean up after the merge
+
+Wait for the human to merge. Do not clean up a session whose PR is still open. The worktree is the only copy of that branch's working state.
+
+Once it is merged:
+
+1. For a plan step, tick the step on the plan issue.
+2. Leave the worktree. Use the harness's action for this if it has one.
+3. Remove the worktree and the merged branch from the main checkout. Use the harness's action if it has one. Otherwise use git:
+
+   ```sh
+   git worktree remove <path>
+   git branch -d session/<slug>
+   git fetch --prune
+   ```
+
+4. Confirm that any issue with a `Closes` keyword closed.
+
+Removing the worktree deletes its dependencies. The next session installs its own with `mise run install`.
+
+If `git worktree remove` refuses because the tree is dirty, stop and show the user what is uncommitted. Never pass `--force` without asking.
