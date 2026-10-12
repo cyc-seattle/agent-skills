@@ -7,6 +7,11 @@ Agent skills shared by the cyc-seattle repos. Each skill is a directory under `s
 | `technical-writing` | Write prose that ships in a repo                        |
 | `capture`           | File a GitHub issue with a type, a priority, and a body |
 | `triage`            | Bring the open issues to a consistent, actionable state |
+| `start-session`     | Open a work session and sort each request into a tier   |
+| `design`            | Plan a change in `.plans/`, then post it as an issue    |
+| `implement`         | Hand one scoped change to the `implementer` agent       |
+| `review`            | Review the session diff with the `reviewer` agent       |
+| `end-session`       | Run `mise run ci`, open the PR, and hand off            |
 
 ## Install
 
