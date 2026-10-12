@@ -1,0 +1,11 @@
+{
+  "name": "cyc",
+  "description": "Skills for writing, filing issues, and triage in cyc-seattle repos",
+  "author": {
+    "name": "cyc-seattle",
+    "url": "https://github.com/cyc-seattle"
+  },
+  "homepage": "https://github.com/cyc-seattle/agent-skills",
+  "repository": "https://github.com/cyc-seattle/agent-skills",
+  "license": "Apache-2.0"
+}
