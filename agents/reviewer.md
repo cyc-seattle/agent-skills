@@ -61,6 +61,7 @@ Read the surrounding code, not only the changed lines. Most real defects are in 
 
 - Does the diff contain changes nobody asked for?
 - Is each commit scoped to one task?
+- Is the PR title a conventional commit whose type matches the change?
 
 ### Repo-specific checks
 

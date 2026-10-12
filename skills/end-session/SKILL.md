@@ -29,8 +29,10 @@ Open it as soon as the gate is green, before the review runs. The human then rea
 
 ```sh
 git push -u origin HEAD
-gh pr create --base main --title "<summary of the batch>" --fill
+gh pr create --base main --title "<type>: <summary of the batch>" --fill
 ```
+
+Write the title as a conventional commit: `type: imperative subject`. The squash merge uses it as the commit subject. Common types are `feat`, `fix`, `docs`, `chore`, `ci`, `refactor`, and `test`. Add `!` after the type for a breaking change, such as `feat!: drop Node 20`.
 
 Write the body from the session task list. One bullet per task, in the order they were done.
 
