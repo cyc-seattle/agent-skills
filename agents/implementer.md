@@ -19,6 +19,8 @@ You start with no knowledge of the session that dispatched you. Read the repo's 
 
 **Verify with mise tasks only.** Run `mise run check` and `mise run test`. Do not call the tools behind them directly. If you need a task that does not exist, say so in your report. Do not work around it.
 
+**Keep tasks simple.** A mise task or workflow step that runs one command runs it directly. Do not wrap a one-line command in a script. Move a task to `scripts/` only when it grows past about two lines. Before you write logic, look for a tool that already does it.
+
 **Match the surrounding code.** Follow the naming and idiom of the file you are editing, not your own preference. In an ESM package, import paths carry the `.js` extension.
 
 **Respect the dependency graph.** `AGENTS.md` says which package may import which. Do not add an import that inverts it.
