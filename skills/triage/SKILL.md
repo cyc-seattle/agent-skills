@@ -37,5 +37,5 @@ Review the open issue backlog for the current repo and bring it to a consistent,
 
 ## Notes
 
-- The standard labels are `P0`–`P3`, `epic`, `plan-review`, `dependencies`, `good first issue`, and `help wanted`. Don't invent new ones.
+- The only standard labels are `P0`–`P3`. Issue type covers the rest. Don't invent new ones.
 - Gaps in issue numbers are usually pull requests. Don't assume they are missing issues.

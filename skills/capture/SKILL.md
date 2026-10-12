@@ -56,6 +56,6 @@ Keep it tight. Use `## Problem` always. Then use `## Fix` for a bug, or `## Prop
 ## Conventions
 
 - **Title:** short, imperative, no priority prefix (priority lives in the label). e.g. "safeCall retries non-retryable errors with a 60s delay".
-- **Labels:** `P0`–`P3`, `epic`, `plan-review`, `dependencies`, `good first issue`, and `help wanted` already exist. Don't invent new ones without asking.
+- **Labels:** the only labels are `P0`–`P3`. Issue type covers the rest. Don't invent new ones without asking.
 - For bugs, always note that the fix should include a regression test. The repo's `AGENTS.md` says where tests live.
 - Cross-link related issues with `#N` and note dependencies ("land #47 first").
