@@ -27,10 +27,6 @@ npx skills add cyc-seattle/agent-skills
 
 This uses [vercel-labs/skills](https://github.com/vercel-labs/skills). It installs the skills into `.agents/skills/`. To update them, run `npx skills update`.
 
-### Sub-agents
-
-The `agents/` directory (coming later) uses Claude Code's sub-agent format. Cursor and VS Code also read it.
-
 ## Add a skill
 
 1. Create `skills/<name>/SKILL.md`. Its frontmatter needs a `name` that matches the directory and a `description`.
