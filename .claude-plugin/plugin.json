@@ -1,0 +1,11 @@
+{
+  "name": "cyc",
+  "description": "Skills and sub-agents for writing, issues, plans, and work sessions in cyc-seattle repos",
+  "author": {
+    "name": "cyc-seattle",
+    "url": "https://github.com/cyc-seattle"
+  },
+  "homepage": "https://github.com/cyc-seattle/agent-skills",
+  "repository": "https://github.com/cyc-seattle/agent-skills",
+  "license": "Apache-2.0"
+}

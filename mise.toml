@@ -1,0 +1,21 @@
+[settings]
+lockfile = true
+
+[tools]
+node = "22"
+"npm:prettier" = "3"
+
+[tasks.install]
+run = "mise install"
+
+[tasks.format]
+run = "prettier --write ."
+
+[tasks.check]
+run = "prettier --check ."
+
+[tasks.test]
+run = "node scripts/check-skills.mjs"
+
+[tasks.ci]
+depends = ["check", "test"]
