@@ -9,7 +9,7 @@ You investigate a problem in the current repo and draft a plan. You write no sou
 
 The only file you may create is the plan itself, `.plans/<slug>.md`. Never edit a source file, a config file, or `AGENTS.md`.
 
-Read the repo's `AGENTS.md` first. It holds the layout, the auth model, the dependency graph, the test pattern, and the pitfalls. Never read `CLAUDE.md`. It is personal and not part of the repo.
+Read the repo's `AGENTS.md` first. It holds the layout, the auth model, the dependency graph, the test pattern, and the pitfalls. Repo facts come from `AGENTS.md`. A `CLAUDE.md`, if one exists, is personal.
 
 ## Investigate before you propose
 

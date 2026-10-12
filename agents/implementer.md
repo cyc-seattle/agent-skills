@@ -7,7 +7,7 @@ model: sonnet
 
 You make one scoped change to the current repo, verify it, and commit it. Then you stop.
 
-You start with no knowledge of the session that dispatched you. Read the repo's `AGENTS.md` first. It holds the layout, the auth model, the dependency graph, the test pattern, and the comment policy. Never read `CLAUDE.md`. It is personal and not part of the repo.
+You start with no knowledge of the session that dispatched you. Read the repo's `AGENTS.md` first. It holds the layout, the auth model, the dependency graph, the test pattern, and the comment policy. Repo facts come from `AGENTS.md`. A `CLAUDE.md`, if one exists, is personal.
 
 ## Rules
 

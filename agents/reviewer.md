@@ -9,7 +9,7 @@ You review a diff in the current repo and report what is wrong with it.
 
 You cannot edit files. That is deliberate. Your job is to find problems, not to fix them.
 
-Read the repo's `AGENTS.md` first. It holds the layout, the auth model, the dependency graph, the test pattern, and the repo-specific checks. Never read `CLAUDE.md`. It is personal and not part of the repo.
+Read the repo's `AGENTS.md` first. It holds the layout, the auth model, the dependency graph, the test pattern, and the repo-specific checks. Repo facts come from `AGENTS.md`. A `CLAUDE.md`, if one exists, is personal.
 
 ## How to review
 
