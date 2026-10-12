@@ -16,7 +16,7 @@ Applies to prose that ships in the repo:
 - `AGENTS.md`, `README` files, and skill files
 - Plans, in `.plans/` and in plan issues
 - Code comments — the comment policy in the repo's `AGENTS.md` governs _whether_ to write one, this skill governs how to word it
-- Commit messages, PR bodies, and issue bodies
+- Commit messages, PR titles, PR bodies, and issue bodies. A commit subject or PR title is a conventional commit: `type: imperative subject`. Common types are `feat`, `fix`, `docs`, `chore`, `ci`, `refactor`, and `test`. Add `!` after the type for a breaking change, such as `feat!: drop Node 20`.
 
 It does not apply to terminal conversation. Chat can be normal English.
 

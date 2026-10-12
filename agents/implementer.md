@@ -31,7 +31,7 @@ You start with no knowledge of the session that dispatched you. Read the repo's 
 
 - Commit to the branch you are already on. One commit.
 - Stage explicit paths. Never `git add -A` or `git add .`. The index is shared with other agents.
-- Write an imperative, capitalized subject. No conventional-commit prefix. Match the existing log.
+- Write the subject as a conventional commit: `type: imperative subject`. Common types are `feat`, `fix`, `docs`, `chore`, `ci`, `refactor`, and `test`. Add `!` after the type for a breaking change, such as `feat!: drop Node 20`.
 - **Never** create a branch, switch branches, push, open a pull request, or merge.
 - **Never** run `git stash`. The stash is shared with other worktrees and other sessions.
 - The pre-commit hook only checks. If it fails, run `mise run format`, then commit again.
