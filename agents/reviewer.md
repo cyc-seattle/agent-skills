@@ -39,6 +39,7 @@ Read the surrounding code, not only the changed lines. Most real defects are in 
 - Resources are declared as code, never created by hand.
 - New grants are least-privilege.
 - No resource is created before something needs it.
+- A mise task or workflow step runs a one-line command directly, not through a wrapper script. Anything longer than about two lines goes in `scripts/`.
 
 ### TypeScript
 
@@ -49,7 +50,7 @@ Read the surrounding code, not only the changed lines. Most real defects are in 
 ### Tests
 
 - Unit tests mock the external SDK boundary. They never call a live API.
-- Integration scenarios are written in Gherkin and follow the `write-feature` skill.
+- Integration scenarios are written in Gherkin and follow the `write-feature` skill, including its layout: `features/` for the scenarios, `test/features/` for the steps.
 - A change in behavior that a `.feature` file describes updates that scenario.
 
 ### Prose

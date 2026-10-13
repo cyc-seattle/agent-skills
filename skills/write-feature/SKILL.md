@@ -7,7 +7,15 @@ description: Write integration scenarios in Gherkin for vitest-cucumber in cyc-s
 
 The `.feature` files are the spec. They describe what the apps do, and they stay after the work lands. `@amiceli/vitest-cucumber` runs them under Vitest, so a repo has one test runner.
 
-Read the repo's `AGENTS.md` first. It says where the `.feature` files and the step definitions live.
+Read the repo's `AGENTS.md` first. If it gives a layout that differs from the one below, follow `AGENTS.md`.
+
+## Layout
+
+- `features/<name>.feature` holds the scenarios. Keep the feature files apart from their code.
+- `test/features/<name>.test.ts` holds the step definitions for `<name>.feature`. Steps that more than one feature uses go in a shared file in `test/features/`.
+- Load a feature with a path from the repo root: `loadFeature("features/<name>.feature")`. vitest-cucumber resolves only `./` paths against the calling file.
+- `vitest.config.ts` excludes `test/features/**`, so `mise run test` stays fast and needs no Docker. `vitest.integration.config.ts` includes it, and `mise run integration` runs it.
+- If the scenarios need a fake in Docker, `mise run integration` calls a script that starts it, runs the config, and tears the fake down on exit. Vitest's `globalSetup` teardown does not run on Ctrl+C. A fake that runs in the test process needs no script.
 
 ## Features first
 
