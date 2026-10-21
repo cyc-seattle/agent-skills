@@ -5,7 +5,7 @@ description: Brief and dispatch an implementation worker — a separate agent se
 
 # Dispatch a Worker
 
-Hand one plan step to a **worker**: a separate agent session with its own checkout. The worker branches, commits, pushes, and opens a PR. The coordinator verifies the work, and the maintainer merges it.
+Hand one plan step to a **worker**: a separate agent session with its own checkout. The worker branches, commits, pushes, and opens a PR. The coordinator verifies the work, then merges it, or asks the maintainer to, as the maintainer prefers.
 
 For a sub-agent that commits on the current branch, use `implement` instead.
 
@@ -16,7 +16,7 @@ The worker starts cold. It knows nothing about the conversation, the plan's hist
 1. **Settle the features and the decisions first.** Agree the `.feature` files and every open question with the maintainer. If a decision is still open, ask it, and do not dispatch. A question settled after dispatch costs a second PR.
 2. **One repo per worker.** No two workers share a checkout. Two workers in one checkout fight over the branch, the index, and the working tree.
 3. **Fill in every section of the brief.** Write "None" in a section that has nothing in it, so the worker knows it was not forgotten.
-4. **Verify the work before merge.** Read the diff. Check that every required check passed. Run the prod preview if the change touches prod. Only then ask the maintainer to merge.
+4. **Verify the work before merge.** Read the diff. Check that every required check passed. Run the prod preview if the change touches prod. Only then merge, or ask the maintainer to.
 
 ## The brief
 
@@ -57,7 +57,7 @@ Stay inside these steps. Report anything else you find. Do not fix it.
 
 ## Constraints
 
-- Never touch prod. Never run a prod deploy, a prod preview, or a prod command.
+- Never change prod. Never run a prod deploy or any command that writes to prod. <If the task needs read-only prod previews or state exports, say so here and name the commands.>
 - Start no long-lived process. Stop every process you start before you finish.
 - Put a timeout on any command that might hang.
 - Never switch the machine's kube context. Pass `--context` to every `kubectl` command, or use a private `KUBECONFIG`.
