@@ -10,6 +10,7 @@ Agent skills shared by the cyc-seattle repos. Each skill is a directory under `s
 | `start-session`     | Open a work session and sort each request into a tier   |
 | `design`            | Plan a change in `.plans/`, then post it as an issue    |
 | `implement`         | Hand one scoped change to the `implementer` agent       |
+| `dispatch`          | Brief a worker session that opens its own PR            |
 | `review`            | Review the session diff with the `reviewer` agent       |
 | `end-session`       | Run `mise run ci`, open the PR, and hand off            |
 | `write-feature`     | Write integration scenarios in Gherkin                  |

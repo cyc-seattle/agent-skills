@@ -19,6 +19,7 @@ Each step of the workflow is its own skill. Call them. Do not re-implement them.
 | `triage`            | Clean up the issue backlog                          |
 | `design`            | Tier 3 — write a plan, get it approved, post it     |
 | `implement`         | Tier 2 and 3 — brief and dispatch the `implementer` |
+| `dispatch`          | Tier 3 — brief a worker session in another checkout |
 | `review`            | Review the session diff                             |
 | `end-session`       | Verify, open the PR, review, and hand off           |
 | `technical-writing` | Any prose you write                                 |
