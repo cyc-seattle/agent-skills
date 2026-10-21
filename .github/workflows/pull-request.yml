@@ -12,12 +12,12 @@ permissions:
 
 jobs:
   ci:
-    uses: cyc-seattle/.github/.github/workflows/ci.yml@v2.0.0
+    uses: cyc-seattle/.github/.github/workflows/ci.yml@v2.2.0
 
   pr-title:
     # A push to main has no PR title to check.
     if: github.event_name == 'pull_request'
-    uses: cyc-seattle/.github/.github/workflows/pr-title.yml@v2.0.0
+    uses: cyc-seattle/.github/.github/workflows/pr-title.yml@v2.2.0
     # The top-level permissions grant no pull-requests access, and a called workflow cannot exceed its caller's.
     permissions:
       pull-requests: read
