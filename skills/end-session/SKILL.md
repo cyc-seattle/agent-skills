@@ -51,8 +51,8 @@ Say what the gate proved, and name what it could not. A change that needs a depl
 
 Link issues by what the PR finishes:
 
-- **A plan step:** `Part of #N`. Use `Closes #N` only for the last step.
-- **A task with its own issue:** `Closes #N`.
+- **A plan step:** `Part of [owner/repo#N](https://github.com/owner/repo/issues/N)`. Use `Closes [owner/repo#N](https://github.com/owner/repo/issues/N)` only for the last step.
+- **A task with its own issue:** `Closes [owner/repo#N](https://github.com/owner/repo/issues/N)`.
 - **No issue:** no link. Most sessions have none.
 
 Request a review only when someone other than the author can give one. GitHub rejects a request for review from yourself.
