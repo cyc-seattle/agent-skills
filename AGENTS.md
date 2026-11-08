@@ -2,6 +2,8 @@
 
 Guidance for coding agents working in this repository.
 
+Follow `cyc:conventions` (the rules shared by every cyc-seattle repo).
+
 ## Overview
 
 The agent skills and sub-agents shared by the cyc-seattle repos. Each skill is `skills/<name>/SKILL.md`, and each
@@ -21,8 +23,7 @@ mise provides the tools. Run `mise trust`, then `mise run install`.
 
 ## Writing a skill
 
-Follow `README.md`'s "Add a skill", and write in the style of the `technical-writing` skill. Add the skill to the
-table in `README.md`. A skill here serves every repo, so keep repo-specific detail out of it, or name the repo it
+Follow `README.md`'s "Add a skill", and add the skill to the table in `README.md`. A skill here serves every repo, so keep repo-specific detail out of it, or name the repo it
 applies to.
 
 PR titles are conventional commits. Never push to `main`.
