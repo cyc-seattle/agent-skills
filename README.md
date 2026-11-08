@@ -4,6 +4,7 @@ Agent skills shared by the cyc-seattle repos. Each skill is a directory under `s
 
 | Skill               | Use it to                                               |
 | ------------------- | ------------------------------------------------------- |
+| `conventions`       | Follow the rules shared by every cyc-seattle repo       |
 | `technical-writing` | Write prose that ships in a repo                        |
 | `capture`           | File a GitHub issue with a type, a priority, and a body |
 | `triage`            | Bring the open issues to a consistent, actionable state |
