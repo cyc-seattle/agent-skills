@@ -91,7 +91,7 @@ Ask before posting. Then file it as an issue in the current repo. Get the repo's
 ## 5. Work against the plan
 
 - **One PR per step.** Run `implement` for the step's changes.
-- **A step's PR says `Part of #N`**, not `Closes #N`. Only the last step's PR says `Closes #N`.
+- **A step's PR says `Part of [owner/repo#N](https://github.com/owner/repo/issues/N)`**, not `Closes ...`. Only the last step's PR says `Closes [owner/repo#N](https://github.com/owner/repo/issues/N)`.
 - **Tick a step when its PR merges**, not when it opens.
 - **If a step turns out wrong, stop.** Change the plan on the issue first. Then tell the user what changed and get agreement before you continue.
 
