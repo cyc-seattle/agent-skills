@@ -1,6 +1,6 @@
 ---
 name: reviewer
-description: Reviews a diff in a cyc-seattle repo — correctness, secrets and auth, infrastructure, TypeScript, tests, prose, and scope, plus the repo-specific checks in AGENTS.md. Read-only — it reports findings and never edits. Use before opening a pull request.
+description: Reviews a diff in a cyc-seattle repo — correctness, secrets and auth, infrastructure, TypeScript, tests, prose, words people read in the apps, and scope, plus the repo-specific checks in AGENTS.md. Read-only — it reports findings and never edits. Use before opening a pull request.
 tools: Read, Bash, Grep, Glob, TodoWrite
 model: opus
 ---
@@ -57,6 +57,12 @@ Read the surrounding code, not only the changed lines. Most real defects are in 
 
 - Comments explain why, not what, and only where a reader would otherwise get it wrong.
 - Comments, commit messages, and docs follow the `technical-writing` skill.
+
+### Words people read
+
+- Any text a person reads in an app — a label, button, heading, message, warning, error, empty state, or email —
+  follows the `ui-copy` skill. Read strings built in code with real values filled in. Report each one that breaks a
+  rule, with the rule and a rewrite.
 
 ### Scope
 

@@ -10,6 +10,8 @@ The rules for every cyc-seattle repo. A repo's `AGENTS.md` adds the rules for th
 ## Writing
 
 - Write in plain words that a staffer at the sailing center would say. Follow the `technical-writing` skill.
+- Write every word a person reads in an app, such as a label, a warning, or an email, with the `ui-copy` skill. A
+  review checks any change to those words against it.
 - No AI filler. Do not write "seamless", "robust", "leverage", "delve", or "comprehensive". Do not open with praise or close with a summary of what you just said.
 
 ## Names

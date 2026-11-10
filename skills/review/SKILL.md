@@ -1,6 +1,6 @@
 ---
 name: review
-description: Review the session diff with the reviewer agent, which checks correctness, secrets and auth, infrastructure, tests, prose, and scope, plus the repo-specific checks in AGENTS.md. Use before opening a PR, or when the user asks for a review of the current branch.
+description: Review the session diff with the reviewer agent, which checks correctness, secrets and auth, infrastructure, tests, prose, words people read in the apps, and scope, plus the repo-specific checks in AGENTS.md. Use before opening a PR, or when the user asks for a review of the current branch.
 ---
 
 # Review the Diff
@@ -36,6 +36,9 @@ Without sub-agents, review the diff yourself against the `reviewer` agent file. 
 **Never skip a review when the diff touches auth, IAM, secrets, or infrastructure code.**
 
 Otherwise, skip it and say why when the whole diff is prose — markdown, comments, docs. Every item on the checklist is about code. Read the diff yourself instead.
+
+**Never skip it when the diff changes words people read in an app**, such as a label, a warning, or an email. Check
+those words against the `ui-copy` skill, whether the reviewer agent or you do the review.
 
 ## 4. Report
 
