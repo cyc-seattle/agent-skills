@@ -1,6 +1,6 @@
 ---
 name: design
-description: Plan a change before any code is written — draft it in .plans/, revise it with the user until they approve, then post it as a GitHub issue with the steps as a task list and work against it one PR per step. Use for work that needs a decision, spans packages or repos, touches infrastructure or auth, or will take more than one PR.
+description: Plan a change before any code is written — draft it in .plans/, revise it with the user until they approve, then post it as a GitHub issue with the steps as a task list grouped into phases, and ship each phase as one PR per repo. Use for work that needs a decision, spans packages or repos, touches infrastructure or auth, or will take more than one PR.
 ---
 
 # Design a Change
@@ -57,14 +57,20 @@ Use this shape:
 
 ## Steps
 
-1. <one PR-sized step>
+### Phase 1: <what the phase delivers>
+
+1. <a step>
 2. <the next step>
+
+### Phase 2: <what the phase delivers>
+
+3. <a step>
 ```
 
 If the `designer` agent wrote the draft, read it yourself before the user sees it. You are accountable for what you put in front of them. Check these points:
 
 - It cites real code.
-- Each step is one PR and can merge on its own.
+- Each phase ships as one PR per repo it touches, and each of those PRs can merge on its own.
 - Each open question is a real decision, not research that was skipped.
 
 Send it back if not.
@@ -90,9 +96,9 @@ Ask before posting. Then file it as an issue in the current repo. Get the repo's
 
 ## 5. Work against the plan
 
-- **One PR per step.** Run `implement` for the step's changes.
-- **A step's PR says `Part of [owner/repo#N](https://github.com/owner/repo/issues/N)`**, not `Closes ...`. Only the last step's PR says `Closes [owner/repo#N](https://github.com/owner/repo/issues/N)`.
-- **Tick a step when its PR merges**, not when it opens.
+- **One PR per repo per phase.** Run `implement` for each step, on the phase's branch in that repo.
+- **A phase's PR says `Part of [owner/repo#N](https://github.com/owner/repo/issues/N)`**, not `Closes ...`. Only the last phase's PR says `Closes [owner/repo#N](https://github.com/owner/repo/issues/N)`.
+- **Tick a step when the PR that finishes it merges**, not when it opens.
 - **If a step turns out wrong, stop.** Change the plan on the issue first. Then tell the user what changed and get agreement before you continue.
 
 ## 6. Retire the plan

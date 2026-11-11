@@ -1,11 +1,11 @@
 ---
 name: dispatch
-description: Brief and dispatch an implementation worker — a separate agent session that works in its own checkout and opens its own PR. Settle the features and the open decisions with the maintainer first, then fill in the worker-brief template. Use when a coordinator hands a plan step to another agent session, not a sub-agent in the same session.
+description: Brief and dispatch an implementation worker — a separate agent session that works in its own checkout and opens its own PR. Settle the features and the open decisions with the maintainer first, then fill in the worker-brief template. Use when a coordinator hands a plan phase in one repo to another agent session, not a sub-agent in the same session.
 ---
 
 # Dispatch a Worker
 
-Hand one plan step to a **worker**: a separate agent session with its own checkout. The worker branches, commits, pushes, and opens a PR. The coordinator verifies the work, then merges it, or asks the maintainer to, as the maintainer prefers.
+Hand one plan phase in one repo to a **worker**: a separate agent session with its own checkout. The worker branches, commits, pushes, and opens a PR. The coordinator verifies the work, then merges it, or asks the maintainer to, as the maintainer prefers.
 
 For a sub-agent that commits on the current branch, use `implement` instead.
 
@@ -26,7 +26,7 @@ Copy this template. Replace each `<...>` with the task's details. Keep the stand
 ```markdown
 # <Worker name>: <one-line summary of the change>
 
-Part of [<owner/repo#N>](https://github.com/<owner/repo>/issues/<N>), step <M>.
+Part of [<owner/repo#N>](https://github.com/<owner/repo>/issues/<N>), phase <M>.
 
 Follow `cyc:conventions`.
 
@@ -41,7 +41,7 @@ Read the plan issue first. Then read the `AGENTS.md` of each repo you touch.
 
 ## Already decided
 
-- <the spec, or the plan step, with links>
+- <the spec, or the plan phase, with links>
 - <the `.feature` files agreed with the maintainer, by path>
 - <each decision already made, and the reason the obvious alternative lost>
 
@@ -87,8 +87,8 @@ Put this evidence in the done report:
 
 - Never dispatch with an open decision. Ask it first.
 - Never dispatch two workers into one checkout.
-- Name each step's issue in the brief, so the worker's PR can link it.
-- If a worker reports the step is bigger than the brief describes, stop. Change the plan on the issue, and get the maintainer's agreement before you dispatch again.
+- Name each phase's issue in the brief, so the worker's PR can link it.
+- If a worker reports the phase is bigger than the brief describes, stop. Change the plan on the issue, and get the maintainer's agreement before you dispatch again.
 
 ## Orca
 

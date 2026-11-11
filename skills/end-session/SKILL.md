@@ -51,7 +51,7 @@ Say what the gate proved, and name what it could not. A change that needs a depl
 
 Link issues by what the PR finishes:
 
-- **A plan step:** `Part of [owner/repo#N](https://github.com/owner/repo/issues/N)`. Use `Closes [owner/repo#N](https://github.com/owner/repo/issues/N)` only for the last step.
+- **A plan phase:** `Part of [owner/repo#N](https://github.com/owner/repo/issues/N)`. Use `Closes [owner/repo#N](https://github.com/owner/repo/issues/N)` only for the last phase.
 - **A task with its own issue:** `Closes [owner/repo#N](https://github.com/owner/repo/issues/N)`.
 - **No issue:** no link. Most sessions have none.
 
@@ -73,7 +73,7 @@ The user decides what to fix now and what to capture as an issue. Fix through `i
 
 If CI fails after the push, or a review asks for a change, fix it on the same branch through `implement` and push again.
 
-For a plan step, tick nothing on the plan issue yet. The step is done when its PR merges.
+For a plan phase, tick nothing on the plan issue yet. Its steps are done when the PR merges.
 
 ### Always end the session with this block
 
@@ -108,7 +108,7 @@ Wait for the human to merge. Do not clean up a session whose PR is still open. T
 
 Once it is merged:
 
-1. For a plan step, tick the step on the plan issue.
+1. For a plan phase, tick every step the PR finished on the plan issue.
 2. Leave the worktree. Use the harness's action for this if it has one.
 3. Remove the worktree and the merged branch from the main checkout. Use the harness's action if it has one. Otherwise use git:
 
