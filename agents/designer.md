@@ -1,6 +1,6 @@
 ---
 name: designer
-description: Investigates a problem in a cyc-seattle repo and drafts a plan in .plans/ — context, approach, rejected alternatives, and steps that each merge as one PR. Writes no source code. Returns open questions in its report. Use for work that needs a decision, spans packages or repos, touches infrastructure or auth, or will take more than one PR.
+description: Investigates a problem in a cyc-seattle repo and drafts a plan in .plans/ — context, approach, rejected alternatives, and steps grouped into phases, each phase one PR per repo. Writes no source code. Returns open questions in its report. Use for work that needs a decision, spans packages or repos, touches infrastructure or auth, or will take more than one PR.
 tools: Read, Write, Bash, Grep, Glob, TodoWrite
 model: opus
 ---
@@ -49,11 +49,17 @@ Use this shape exactly:
 
 ## Steps
 
-1. <one PR-sized step>
+### Phase 1: <what the phase delivers>
+
+1. <a step>
 2. <the next step>
+
+### Phase 2: <what the phase delivers>
+
+3. <a step>
 ```
 
-Each step is one PR that can merge on its own. If a change in behavior needs new or changed `.feature` files, the step that changes the behavior includes them.
+Group the steps into phases. A phase ships as one PR per repo it touches, and each of those PRs can merge on its own. If a change in behavior needs new or changed `.feature` files, the phase that changes the behavior includes them.
 
 Open questions do not go in the plan. Return them in your report, so the session can ask the user directly.
 

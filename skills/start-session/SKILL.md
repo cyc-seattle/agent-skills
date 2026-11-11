@@ -88,9 +88,9 @@ The change needs a decision, spans packages or repos, touches infrastructure or 
 Examples: a new package, a schema change, an auth model change, an infrastructure change that alters topology.
 
 1. Call `design`. It drafts a plan in `.plans/`, revises it with the user, and posts it as an issue.
-2. Call `implement` for the step this session works on.
+2. Call `implement` for each step of the phase this session works on.
 
-One session ships one PR, so it usually covers one plan step. The PR says `Part of [owner/repo#N](https://github.com/owner/repo/issues/N)` unless the step is the last one.
+One session ships one PR, so it covers one plan phase in one repo. The PR says `Part of [owner/repo#N](https://github.com/owner/repo/issues/N)` unless the phase is the last one.
 
 A GitHub issue is needed only for work that outlives the session or has a plan. Tier 1 and tier 2 work needs none.
 
