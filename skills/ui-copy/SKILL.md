@@ -43,7 +43,7 @@ Prose that ships in a repo, such as docs and comments, follows `technical-writin
 8. **Lead with the thing it's about.** Start with the offering, the boat, or the person. Not with the rule.
 9. **Numbers have units.** Write "14 sailors", "3 hours", "2 RIBs". Never a bare number. Write "no", not "0", when
    there are none: "no coach", not "0 coaches".
-10. **Give the numbers that show how far off it is.** "14 sailors, but enough qualified coaches for only 10" tells
+10. **Give the numbers that show how far off it is.** "11 sailors, but enough coaches for only 10" tells
     the reader how many coaches short they are.
 11. **One message, one problem.** Do not chain causes with "so" more than once.
 12. **No blame and no alarm.** Do not write "invalid", "illegal", "failed to", or "error:" in front of a message.
@@ -64,8 +64,8 @@ Real warnings from the planning engine in [cyc-seattle/platform](https://github.
 
 | Before                                                                                         | After                                                                                             |
 | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| K Pod Spring 2026: 14 sailors, but the staff can take 0                                        | K Pod Spring 2026 has 14 sailors and no qualified coach                                           |
-| Guppies Week 2: 14 sailors, but the staff can take 10                                          | Guppies Week 2 has 14 sailors, but enough qualified coaches for only 10                           |
+| K Pod Spring 2026: 14 sailors, but the staff can take 0                                        | K Pod Spring 2026 has 14 sailors and no coach                                                     |
+| Guppies Week 2: 11 sailors, but the staff can take 10                                          | Guppies Week 2 has 11 sailors, but enough coaches for only 10                                     |
 | Guppies Week 2: 14 sailors, but the boats can take 10                                          | Guppies Week 2 has 14 sailors, but the boats hold only 10                                         |
 | 14 Sailqubes out, but CSC has 12, for Guppies Week 3                                           | 14 Sailqubes out at once for Guppies Week 3, but CSC has only 12                                  |
 | Head Coach has hours charged to programs but no paid_hours_per_year, so they cost nothing      | Head Coach has hours charged to programs but no paid hours per year, so those hours cost nothing  |
